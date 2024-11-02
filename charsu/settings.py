@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'django_extensions',
-    'product_service'
+    'product_service',
+    'debug_toolbar',
 ]
 #Add restframworrk to setting
 REST_FRAMEWORK = {
@@ -60,7 +61,7 @@ REST_FRAMEWORK = {
         ),    
     }
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1)
     }
 # Middleware framework
@@ -73,6 +74,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'charsu.urls'
@@ -108,7 +110,34 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
+#logging Dictionary Configuration\
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers':{
+        'console':{
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            
+            },
+            'file':{
+                'level': 'DEBUG',
+                'class': 'logging.FileHandler',
+                'filename': 'debug.log',
+                },    
+        },
+    'loggers':{
+        'django':{
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+            },
+            '':{
+                'handlers': ['console','file'],
+                'level': 'DEBUG',
+                },    
+        },    
+    }
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
@@ -126,6 +155,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+INTERNAL_IPS = [
+    '127.0.0.1',
+    ]
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 LANGUAGE_CODE = 'en-us'
