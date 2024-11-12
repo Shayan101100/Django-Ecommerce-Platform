@@ -14,7 +14,6 @@ import os
 import posixpath
 from datetime import timedelta
 from pathlib import Path
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -41,11 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # My APPs
-    'user_service',
     'rest_framework',
     'rest_framework_simplejwt',
     'django_extensions',
+    'user_service',
     'product_service',
+    'order_service',
+    'payment_service',
+    'notification_service',
     'debug_toolbar',
 ]
 #Add restframworrk to setting
@@ -158,6 +160,9 @@ AUTH_PASSWORD_VALIDATORS = [
 INTERNAL_IPS = [
     '127.0.0.1',
     ]
+
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 LANGUAGE_CODE = 'en-us'

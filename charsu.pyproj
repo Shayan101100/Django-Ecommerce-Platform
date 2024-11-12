@@ -7,6 +7,7 @@
     <InterpreterId>MSBuild|charsu_venv|$(MSBuildProjectFullPath)</InterpreterId>
     <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
     <WebBrowserPort>8000</WebBrowserPort>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -48,6 +49,47 @@
     <Compile Include="charsu\settings.py" />
     <Compile Include="charsu\urls.py" />
     <Compile Include="charsu\wsgi.py" />
+    <Compile Include="notification_service\apps.py" />
+    <Compile Include="notification_service\migrations\__init__.py" />
+    <Compile Include="notification_service\config_redis.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="notification_service\app.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="notification_service\celery_conf1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="notification_service\tasks.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="notification_service\__init__.py" />
+    <Compile Include="order_service\admin.py" />
+    <Compile Include="order_service\apps.py" />
+    <Compile Include="order_service\migrations\__init__.py" />
+    <Compile Include="order_service\models.py" />
+    <Compile Include="order_service\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="order_service\serializer.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="order_service\tests.py" />
+    <Compile Include="order_service\views.py" />
+    <Compile Include="order_service\__init__.py" />
+    <Compile Include="payment_service\admin.py" />
+    <Compile Include="payment_service\apps.py" />
+    <Compile Include="payment_service\migrations\__init__.py" />
+    <Compile Include="payment_service\models.py" />
+    <Compile Include="payment_service\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="payment_service\serializer.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="payment_service\tests.py" />
+    <Compile Include="payment_service\views.py" />
+    <Compile Include="payment_service\__init__.py" />
     <Compile Include="product_service\admin.py" />
     <Compile Include="product_service\apps.py" />
     <Compile Include="product_service\migrations\__init__.py" />
@@ -86,6 +128,12 @@
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="charsu\" />
+    <Folder Include="notification_service\" />
+    <Folder Include="notification_service\migrations\" />
+    <Folder Include="order_service\" />
+    <Folder Include="order_service\migrations\" />
+    <Folder Include="payment_service\" />
+    <Folder Include="payment_service\migrations\" />
     <Folder Include="product_service\" />
     <Folder Include="product_service\migrations\" />
     <Folder Include="product_service\migrations\__pycache__\" />
@@ -96,6 +144,7 @@
     <Folder Include="user_service\__pycache__\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="notification_service\requirements.txt" />
     <Content Include="product_service\migrations\__pycache__\__init__.cpython-311.pyc" />
     <Content Include="product_service\__pycache__\admin.cpython-311.pyc" />
     <Content Include="product_service\__pycache__\apps.cpython-311.pyc" />
