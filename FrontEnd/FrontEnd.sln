@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34601.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "frontend", "frontend.esproj", "{86207554-9870-4A15-B74A-3F272433DE1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86207554-9870-4A15-B74A-3F272433DE1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86207554-9870-4A15-B74A-3F272433DE1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86207554-9870-4A15-B74A-3F272433DE1F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{86207554-9870-4A15-B74A-3F272433DE1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86207554-9870-4A15-B74A-3F272433DE1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86207554-9870-4A15-B74A-3F272433DE1F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA987B28-32FB-4840-8297-363A6D8F5409}
+	EndGlobalSection
+EndGlobal

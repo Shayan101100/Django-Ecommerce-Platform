@@ -103,19 +103,18 @@
     <Compile Include="product_service\tests.py" />
     <Compile Include="product_service\views.py" />
     <Compile Include="product_service\__init__.py" />
-    <Compile Include="user_service\admin.py" />
     <Compile Include="user_service\apps.py" />
     <Compile Include="user_service\migrations\__init__.py" />
-    <Compile Include="user_service\models.py" />
+    <Compile Include="user_service\models.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="user_service\urls.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="user_service\serializers.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="user_service\tests.py" />
     <Compile Include="user_service\views.py" />
-    <Compile Include="user_service\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />

@@ -27,7 +27,8 @@ SECRET_KEY = '74957888-43bf-47a7-8231-024c4791aaca'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+#user service use diffrent auth
+AUTH_USER_MODEL = 'user_service.UserInfo'
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
 INSTALLED_APPS = [
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'payment_service',
     'notification_service',
     'debug_toolbar',
+    'corsheaders',
 ]
 #Add restframworrk to setting
 REST_FRAMEWORK = {
@@ -69,6 +71,7 @@ SIMPLE_JWT = {
 # Middleware framework
 # https://docs.djangoproject.com/en/2.1/topics/http/middleware/
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -77,6 +80,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'charsu.urls'
@@ -157,6 +161,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#FrontEnd project URL
+CORS_ALLOWED_ORIGIN = [
+        'http://localhost:3000'
+    ]
 INTERNAL_IPS = [
     '127.0.0.1',
     ]
